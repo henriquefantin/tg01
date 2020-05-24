@@ -17,11 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route:middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function(){
+
+	
+
+	Route::middleware(['admin'])->group(function(){
+
+
+		Route::get('/home', 'HomeController@index')->name('home');
+		
+	});
 
 });
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
