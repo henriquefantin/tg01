@@ -20,17 +20,12 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function(){
 
 	Route::get('/home', 'HomeController@index')->name('home');
-
+  // todos os usuarios
 	Route::middleware(['admin'])->group(function(){
-
-
-		
-		
+   
+		 // Apenas usuario ADM
 	});
 
 });
 
-
 Auth::routes();
-
-
